@@ -25,11 +25,16 @@ import MainHead from '../components/MainHead.astro';
 			.wrapper.bio {
 				max-width: 50em;
 			}
+			@media (min-width: 1020px) {
+				.sub-title {
+					font-size: var(--f-u12);
+				}
+			}
 		</style>
 	</head>
 	<body>
 		<div class="wrapper">
-			<h1>Trayectoria</h1>
+			<h2 class="sub-title">Trayectoria</h2>
 			<div class="heroImg">
 				<img
 					width="1400"
