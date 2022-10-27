@@ -3,6 +3,7 @@
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import About from './about.astro';
+import Trajectory from './trajectory.astro';
 import Projects from './projects.astro'
 import Footer from '../components/Footer.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
@@ -24,6 +25,10 @@ const featuredProject = projects[0]!;
 		/>
 		<style>
 			.wrapper {
+				margin-top: 4em;
+				margin-bottom: 2em;
+			}
+			.section{
 				margin-top: 4em;
 				margin-bottom: 2em;
 			}
@@ -231,14 +236,17 @@ const featuredProject = projects[0]!;
 			</div>
 		</header>
 		<main class="wrapper">
-			<hr>
-			<div class="about" id="about">
+			
+			<section class="section" id="about">
+				<hr>
 				<About/>
-			</div>
-			<hr>
-			<div class="projects" id="projects">
+			</section>
+			
+			<section class="section" id="projects"><hr>
 				<Projects/>
-			</div>
+			</section>
+			
+			<section class="section" id="trajectory"><hr><Trajectory/></section>
 			<!-- <div class="grid">
 				<div class="section">
 					<h3 class="sectionTitle">Selected Work</h3>
