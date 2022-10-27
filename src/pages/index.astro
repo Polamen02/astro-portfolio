@@ -3,6 +3,7 @@
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import About from './about.astro';
+import Projects from './projects.astro'
 import Footer from '../components/Footer.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import type { Project } from '../types';
@@ -23,7 +24,7 @@ const featuredProject = projects[0]!;
 		/>
 		<style>
 			.wrapper {
-				margin-top: 2em;
+				margin-top: 4em;
 				margin-bottom: 2em;
 			}
 
@@ -200,6 +201,8 @@ const featuredProject = projects[0]!;
 				text-align: center;
 				margin-top: 2em;
 			}
+
+			
 		</style>
 	</head>
 	<body>
@@ -228,8 +231,13 @@ const featuredProject = projects[0]!;
 			</div>
 		</header>
 		<main class="wrapper">
+			<hr>
 			<div class="about" id="about">
 				<About/>
+			</div>
+			<hr>
+			<div class="projects" id="projects">
+				<Projects/>
 			</div>
 			<!-- <div class="grid">
 				<div class="section">
