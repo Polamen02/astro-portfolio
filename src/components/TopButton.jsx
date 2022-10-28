@@ -3,10 +3,11 @@ import React from "react";
 const TopButton = () => {
   const ScrollBackToTop = () => {
     window.scrollTo({top: 0, left :0, behavior: "smooth"})
+    console.log("Works?")
   };
   return (
     <button
-      onClick={() => {ScrollBackToTop}}
+      onClick={() => console.log("CLICKS!?")}
       className="topBtn"
       title="Go to top"
     >

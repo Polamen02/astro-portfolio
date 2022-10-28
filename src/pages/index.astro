@@ -8,19 +8,10 @@ import Projects from "./projects.astro";
 import Footer from "../components/Footer.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import type { Project } from "../types";
-import TopButton from "../components/TopButton.jsx"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob<Project>("./project/**/*.md");
 const featuredProject = projects[0]!;
-const scrollBackToTop = () => {
-	
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	
-}
-	
-
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -32,27 +23,30 @@ const scrollBackToTop = () => {
       title="Pol Santos: Personal Site"
       description="Pol Santos: Developer, Roller, and Reader..."
     />
+    <script>
+      function handleClick () {
+        document.documentElement.scrollTop = 0;
+      }
+      document.getElementById("topBtn").addEventListener("click", handleClick);
+    </script>
     <style>
-     
-   
-	.topBtn {
-		/* display: none; */
-		position: fixed;
-		font-size: 18px;
-		bottom: 20px; /* Place the button at the bottom of the page */
-  		right: 30px;
-		border-color: black;
-		background-color: white;
-		border-radius: 30px
+      .topBtn {
+        /* display: none; */
+        position: fixed;
+        font-size: 18px;
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px;
+        border-color: black;
+        background-color: white;
+        border-radius: 30px;
+      }
 
-	
-	}
+      .topBtn:hover {
+        background-color: grey;
+        cursor: pointer;
+        border-color: white;
+      }
 
-	.topBtn:hover {
-		background-color: grey;
-		cursor: pointer;
-	}
-    
       .wrapper {
         margin-top: 4em;
         margin-bottom: 2em;
@@ -238,7 +232,7 @@ const scrollBackToTop = () => {
     </style>
   </head>
   <body>
-      <Nav />
+    <Nav />
     <header class="hero">
       <img
         width="1600"
@@ -301,7 +295,9 @@ const scrollBackToTop = () => {
 				</div>
 			</div> -->
 
-	<TopButton/>
+      <button id="topBtn" class="topBtn" title="Go to top">
+        <img src="/assets/arrow.svg" />
+      </button>
     </main>
     <Footer />
   </body>

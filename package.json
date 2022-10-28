@@ -11,6 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "astro": "^1.5.3",
     "astro-icon": "^0.8.0"
   },
