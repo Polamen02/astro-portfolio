@@ -91,6 +91,23 @@ h1 {
 	margin-right: auto;
 	padding-left: 2rem;
 	padding-right:
-	2rem;
+		2rem;
 }
 
+
+.topBtn {
+	/* display: none; */
+	position: fixed;
+	font-size: 18px;
+	bottom: 20px;
+	/* Place the button at the bottom of the page */
+	right: 30px;
+	border-color: black;
+	background-color: white;
+	border-radius: 30px
+}
+
+.topBtn:hover {
+	background-color: grey;
+	cursor: pointer;
+}

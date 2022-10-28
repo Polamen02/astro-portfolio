@@ -8,16 +8,16 @@ import Projects from "./projects.astro";
 import Footer from "../components/Footer.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import type { Project } from "../types";
-import { Icon } from 'astro-icon';
+import TopButton from "../components/TopButton.jsx"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob<Project>("./project/**/*.md");
 const featuredProject = projects[0]!;
-const topButton = () => {
-	if(document.getElementById("topBtn").addEventListener){
+const scrollBackToTop = () => {
+	
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
-	}
+	
 }
 	
 
@@ -301,9 +301,7 @@ const topButton = () => {
 				</div>
 			</div> -->
 
-	<button onclick={topButton} class="topBtn" id="topBtn" title="Go to top">
-		<img src="./assets/arrow.svg"/>
-	</button>
+	<TopButton/>
     </main>
     <Footer />
   </body>
